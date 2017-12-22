@@ -1,0 +1,9 @@
+Fails for small numbers because the precision is too low
+e.g. 0.00000000009 sqrt will show number that stops because it only checks 0.001 as good-enough?
+Large numbers... not sure..
+(define (good-enough? guess x)
+	(or
+	 	(< (abs (- (square guess) x)) 0.01)
+		(< (abs (- (guess) (improve guess x))) 0.001)
+	))
+Works better for large numbers, because small numbers need smaller precision (or large because large don't need smaller precision)
