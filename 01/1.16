@@ -1,0 +1,6 @@
+(define (fast-expt b n)
+	(fast-epxt-iter b n 1))
+(define (fast-expt-iter b counter product)
+	(cond ((= counter 16 product)
+		((even? counter) (fast-expt-iter b (/ counter 2) (* product (square b))))
+		((else (fast-expt-iter b (- counter 1) (* b product))))))

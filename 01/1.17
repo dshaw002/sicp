@@ -1,0 +1,16 @@
+(define (double a)
+	(+ a a))
+(define (halve a)
+	(half-func a (- a 1)))
+(define (half-func a guess)
+	(if (or (= guess 0 ) (= a (+ guess guess))) guess)
+	(else (half-func a (- a 1)))))
+
+(define (* a b)
+	(cond ((= b 1) a)
+		((or (= b 0) (= a 0)) 0)
+		(else (times-iter a b 1))))
+(define (times-iter a counter sum)
+	(cond ((= counter 1) sum)
+		((> halve(counter) 0) times-iter a (halve counter) (+ sum double(a))_ 
+		(else (times-iter a (- counter 1) (+ a sum)))))

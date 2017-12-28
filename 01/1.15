@@ -1,0 +1,12 @@
+(p (sine 12.15  / 3))
+(p (sine 4.05))
+(p (sine (p (sine 4.05 / 3))))
+(p (sine (p (sine 1.35))))
+(p (sine (p (sine (p (sine 0.45))))))
+(p (sine (p (sine (p (sine (p (sine 0.15))))))))
+(p (sine (p (sine (p (sine (p (sine (p (sine 0.05))))))))))
+(p (sine (p (sine (p (sine (p (sine (p 0.05)))))))))
+(p (sine (p (sine (p (sine (p (sine (p 0.05)))))))))
+Rn growth(?)
+a. ~ 20x
+b. O(n) time / O(n) space -- (run the program in an interpreter) -- linear recurisve!
