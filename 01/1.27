@@ -1,0 +1,14 @@
+Carmichael numbers - 561, 1105, 1729, 2465, 2821, 6601
+(define (carmichael-test n)
+	  (define (test-er n times)
+		  (if (< times n) (display "Testing "))
+		  (if (< times n) (display times))
+		  (if (< times n) (display ".. "))
+		  (if (< times n) (display (expmod times n n)))
+		  (if (< times n) (newline))
+		  (if (< times n) (test-er n (next times)))
+		  (else 0)
+	  )
+	(test-er n 2))
+
+It shows valid for all Carmichael numbers

@@ -1,0 +1,12 @@
+(fast-prime-test 1000000007)
+*1000000009
+1000000021
+10000000019
+10000000033
+10000000061
+*1000000000039
+*1000000000061
+
+It's roughly double, running into the correct assumption that squaring the number should equal a double increase in speed (logarithmic relation to speed based on size)
+190000000
+247000000

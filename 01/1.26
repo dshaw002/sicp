@@ -1,0 +1,1 @@
+It runs expmod twice. Instead of squaring the number in the procedure call, it squares the time of computation from (O)log n to (O)n 
