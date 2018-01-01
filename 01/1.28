@@ -1,0 +1,24 @@
+-- my og dummy version.. might not be good with large numbers due to not applying remainder process through each step of exponent crunching process
+
+(define (xpmod base exp m)
+	(if (= (remainder (fast-expt base (- exp 1)) m) 1) 
+		1 
+		0))
+
+(define (miller-rabin-test n)
+	(if (= (xpmod 2 n n) 1) 1 0))
+
+-- modified the program to have the test loop through each number and provide a more accruate test after reviewing answers. Still haven't applied the non-trivial square root check in each step due to me still being math retarted. Maybe after brushing up, I can review. Need to keep it moving for now..
+
+(define (xpmod base exp m)
+	(if (= (remainder (fast-expt base (- exp 1)) m) 1) 
+		1 
+		0))
+
+(define (miller-rabin n)
+	(miller-rabin-test (- n 1) n))
+
+(define (miller-rabin-test a n)
+	(cond ((= a 1) 1)
+		  ((= (xpmod a n n) 1) (miller-rabin-test (- a 1) n))
+		  (else 0)))
