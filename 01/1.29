@@ -1,3 +1,15 @@
+Not good, assumes that you multiply a function to the process rather than apply the function to the process
+(define (simpsons f a b n)
+	(define h (/ (- b a) n))
+	(define (add-simp x)
+		(cond ((or (= x 0) (= x b)) (* f (+ a (* x h))))
+			  ((even? x) (* 2 (* f (+ a (* x h)))))
+			  (else (* 4 (* f (+ a (* x h)))))
+		)
+	)
+	(* (sum f a (add-simp (+ a 1) b)) (/ h 3.0)))
+
+Better / working now
 (define (simpsons f a b n)
 	(define h (/ (- b a) n))
 	(define (simpson-term k)
