@@ -1,0 +1,22 @@
+# Recursive
+(define (filtered-accumulate combiner null-value term a next b filter)
+	(cond ((> a b) null-value)
+		  ((= (filter a) 1) (combiner (term a) (filtered-accumulate combiner null-value term (next a) next b filter)))
+		  ((else) (filtered-accumulate combiner null-value term (next a) next b filter))))
+
+# Linear Iterative
+(define (filtered-accumulate combiner null-value term a next b filter)
+	(define (iter a result)
+		(cond ((> a b) result)
+			  ((= (filter a) 1) (iter (next a) (combiner (term a) result)))
+			  (else (iter (next a) result))))
+	(iter a null-value))
+
+# a
+(define (sum-squares-prime a b)
+	(filtered-accumulate + 0 square a inc b prime?))
+(sum-squares-prime 2 10)
+
+# b  GCD(i, n) = 1
+(define (relative-prime-to-n)
+	(cond ()))
