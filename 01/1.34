@@ -1,0 +1,5 @@
+Error: 2 is not a function [f, (anon), (anon)]
+
+Can't set number as function. (f f)
+(f 2)
+(2 2)
